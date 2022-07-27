@@ -3,14 +3,14 @@ import {useState} from "react";
 import {useForm} from "react-hook-form";
 import * as Yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
-import {Modal, IconButton, InputAdornment, Stack, Alert, Link, Box} from "@mui/material";
+import {Modal, IconButton, InputAdornment, Stack, Alert, Link, Box, Button, Typography, Divider} from "@mui/material";
 import {VisibilityIcon} from "@mui/material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import {LoadingButton} from "@mui/lab";
 import useAuth from "../hook/useAuth";
 import {useLocation, useNavigate} from "react-router-dom";
 import {FCheckbox, FormProvider, FTextField} from "../component/form";
-
+import {Icon} from '@iconify/react';
 
 const style = {
     position: "absolute",
@@ -98,6 +98,25 @@ const LoginModal = () => {
                                 Forgot password?
                             </Link>
                         </Stack>
+                        <Divider sx={{my: 3}}>
+                            <Typography variant="body2" sx={{color: 'text.secondary'}}>
+                                OR
+                            </Typography>
+                        </Divider>
+                        <Stack direction="row" spacing={2}>
+                            <Button fullWidth size="large" color="inherit" variant="outlined">
+                                <Icon icon="eva:google-fill" color="#DF3E30" width={22} height={22}/>
+                            </Button>
+
+                            <Button fullWidth size="large" color="inherit" variant="outlined">
+                                <Icon icon="eva:facebook-fill" color="#1877F2" width={22} height={22}/>
+                            </Button>
+
+                            <Button fullWidth size="large" color="inherit" variant="outlined">
+                                <Icon icon="eva:twitter-fill" color="#1C9CEA" width={22} height={22}/>
+                            </Button>
+                        </Stack>
+
                         <LoadingButton
                             fullWidth
                             size="large"
